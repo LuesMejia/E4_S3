@@ -6,6 +6,8 @@ import Inicio from './components/component1';
 import Libros from './components/component2';
 import Actual from './components/component3';
 import Navbar from './components/Navbar';
+import Home from './components/HomeScreen';
+import Detalles from   './components/DetailsScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,13 +18,17 @@ export default function App() {
         {/* Navbar siempre arriba */}
         <Navbar />
 
-        {/* Contenido de navegación */}
+        {/* Contenido de navegación   <Stack.Navigator initialRouteName="Inicio">*/}
         <View style={styles.content}>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Inicio" component={Inicio} />
             <Stack.Screen name="Libros" component={Libros} />
             <Stack.Screen name="Actual" component={Actual} />
+                
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Details" component={Detalles} />
           </Stack.Navigator>
+
         </View>
       </View>
     </NavigationContainer>

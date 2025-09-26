@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, Alert } from 'react-native';
 
 import bookImage from '../assets/Crimen y castigo.png';
+
 export default function component1() {
   return (
     <View style={styles.container}>
@@ -11,7 +12,11 @@ export default function component1() {
       </Text>
       <Text style={styles.subtitle}>✨ Recomendación de hoy✨</Text>
       <Text style={styles.book}>Crimen y castigo – Fiódor Dostoyevski</Text>
-        <Image source={bookImage} style={styles.bookEstilo}/>
+      <Image source={bookImage} style={styles.bookEstilo} />
+
+      <View style={styles.boton} >
+        <Button title="Botón" onPress={() => Alert.alert('Presionado')} />
+      </View>
     </View>
   );
 }
@@ -47,7 +52,11 @@ const styles = StyleSheet.create({
   },
   bookEstilo: {
     width: 150,
-    height: 220,        
+    height: 220,
     marginTop: 20,
-  }
+  },
+  boton: {
+    marginTop: 10,
+  },
+ 
 });
